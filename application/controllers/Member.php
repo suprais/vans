@@ -6,7 +6,10 @@ class Member extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('Member_model');
-		$this->load->helper('form');	
+		$this->load->helper('form');
+		if ($this->session->userdata('logged_in') == null) {
+				redirect('Login/logout');
+			}	
 	}
 
 	public function index()

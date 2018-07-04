@@ -9,7 +9,10 @@ class Sepatu extends CI_Controller {
 		//load model Sepatu_model
 		$this->load->model('Sepatu_model');
 		//load helper form
-		$this->load->helper('form');	
+		$this->load->helper('form');
+		if ($this->session->userdata('logged_in') == null) {
+				redirect('Login/logout');
+			}	
 	}
 
 	/* index (fungsi yang akan berjalan jika tidak ada fungsi yang dipangggil)

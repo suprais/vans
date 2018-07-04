@@ -10,5 +10,6 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
+        <a class="py-2 d-none d-md-inline-block" href="<?php echo base_url('Login/logout') ?>">Logout</a>
       </div>
     </nav>

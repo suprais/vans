@@ -50,10 +50,28 @@ class Sepatu extends CI_Controller {
 		}
 		// jika kita sudah melalukan submit
 		else{
-			//memanggil fungsi insertData pada model
-			$this->Sepatu_model->insertData();
-			//redirect / pergi ke halaman 'sepatu'
+			 	$config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 20000;
+                $config['max_width']            = 10240;
+                $config['max_height']           = 7680;
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('image'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+
+                        $this->load->view('sepatu/input.php',$error); 
+                }
+                else
+                {
+                        $data = array('upload_data' => $this->upload->data());
+			$this->Sepatu_model->insertData($data['upload_data']['file_name']);
 			redirect('sepatu');
+                }
+
+			
 		}
 	}
 

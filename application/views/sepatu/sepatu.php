@@ -18,6 +18,7 @@
 				<th>Nama</th>
 				<th>Keterangan</th>
 				<th>Harga</th>
+				<th>Image</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
@@ -29,6 +30,7 @@
 					<td><?php echo $value['nama'] ?></td>
 					<td><?php echo $value['keterangan'] ?></td>
 					<td><?php echo $value['harga'] ?></td>
+					<td><img src="<?php echo base_url('uploads/'.$value['image']) ?>" style="width: 100px;"></td>
 					<td>
 						<!-- --AKSI-- -->
 						<a href="<?php echo base_url('Sepatu/update/'.$value['id']) ?>" class="btn btn-sm btn-success">Ubah</a>

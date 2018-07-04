@@ -77,4 +77,23 @@
         <div class="bg-white box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
       </div>
     </div>
+    <div class="container">
+      <h1 class="text-center">List Product</h1>
+      <div class="row">
+
+        <?php foreach ($sepatu as $key => $value): ?>
+          <div class="col-md-4">
+            <div class="card">
+  <img class="card-img-top" src="<?php echo base_url('uploads/'.$value->image) ?>" alt="Card image cap" style="width: 100%">
+  <div class="card-body">
+    <h5 class="card-title"><?php echo $value->nama ?></h5>
+    <p class="card-text"><?php echo $value->keterangan ?> <b><?php echo $value->harga ?></b></p>
+
+  </div>
+</div>
+</div>
+        <?php endforeach ?>
+      
+    </div>
+  </div>
 <?php $this->load->view('footer') ?>

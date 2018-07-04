@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
 		if ($this->session->userdata('logged_in') == null) {
 				redirect('Login/logout');
 			}
-		$this->load->view('home');
+		$data['sepatu'] = $this->db->get('sepatu')->result();
+		$this->load->view('home',$data);
 	}
 }

@@ -27,11 +27,12 @@ class Sepatu_model extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
-	public function insertData()
+	public function insertData($upload_name)
 	{
 		/* jika semua sama sperti di table
 		gunakan versi simple seprti berikut */
 		$data = $this->input->post();
+		$data['image'] = $upload_name;
 		/* eksekusi query insert into "sepatu" diisi dengan variable $data
 		face2face ae lek bingung :| */
 		$this->db->insert("sepatu",$data);

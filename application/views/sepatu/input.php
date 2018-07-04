@@ -14,7 +14,8 @@
 	name pada input harus sama dengan table didatabase
 	intinya hanya pada syntax input dan form saja lainnya dari bootstrap e
 	 -->
-	<form action="<?php echo base_url('Sepatu/input'); ?>" method="post">
+	 <?php if(isset($error)) echo $error; ?>
+	<?php echo form_open_multipart('') ?>
 		<div class="form-group row">
 			<label for="nama" class="col-sm-2 col-form-label">nama</label>
 			<div class="col-sm-10">
@@ -34,6 +35,12 @@
 			<div class="col-sm-10">
 				<input type="text" name="harga" class="form-control" id="harga" value="" placeholder="harga">
 				<?php echo form_error('harga') ?> <!-- menampilkan error saat rule harga gagal -->
+			</div>
+		</div>
+		<div class="form-group row">
+			<label for="image" class="col-sm-2 col-form-label">image</label>
+			<div class="col-sm-10">
+				<input type="file" name="image">
 			</div>
 		</div>
 		<div class="form-group row">

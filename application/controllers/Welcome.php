@@ -20,9 +20,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		if ($this->session->userdata('logged_in') == null) {
-				redirect('Login/logout');
-			}
 		$data['sepatu'] = $this->db->get('sepatu')->result();
 		$this->load->view('home',$data);
 	}

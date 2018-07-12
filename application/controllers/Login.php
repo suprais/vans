@@ -17,7 +17,7 @@ class Login extends CI_Controller {
 	public function cekDB($username)
 	{
 		$password = $this->input->post('password');
-		$query = $this->db->where('username',$username)->where('password',$password)->get('member');
+		$query = $this->db->where('username',$username)->where('password',$password)->get('users');
 		if ($query->num_rows() == 1) {
 			$data = $query->result()[0];
 			$sess = array(
@@ -26,7 +26,8 @@ class Login extends CI_Controller {
 				'alamat' => $data->alamat,
 				'telepon' => $data->telepon,
 				'email' => $data->email,
-				'username' => $data->username
+				'username' => $data->username,
+				'level' => $data->level
 			);
 			$this->session->set_userdata('logged_in',$sess);
 			return true;

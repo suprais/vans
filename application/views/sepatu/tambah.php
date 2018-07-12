@@ -19,6 +19,20 @@
 		</div>
 	</div>
 	<div class="form-group row">
+		<label for="ukuran" class="col-sm-2 col-form-label">ukuran</label>
+		<div class="col-sm-10">
+			<input type="text" name="ukuran" class="form-control" id="ukuran" value="" placeholder="ukuran">
+			<?php echo form_error('ukuran') ?> <!-- menampilkan error saat rule ukuran gagal -->
+		</div>
+	</div>
+	<div class="form-group row">
+		<label for="stok" class="col-sm-2 col-form-label">stok</label>
+		<div class="col-sm-10">
+			<input type="text" name="stok" class="form-control" id="stok" value="" placeholder="stok">
+			<?php echo form_error('stok') ?> <!-- menampilkan error saat rule stok gagal -->
+		</div>
+	</div>
+	<div class="form-group row">
 		<label for="harga" class="col-sm-2 col-form-label">harga</label>
 		<div class="col-sm-10">
 			<input type="text" name="harga" class="form-control" id="harga" value="" placeholder="harga">

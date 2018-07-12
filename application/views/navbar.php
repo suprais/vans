@@ -7,6 +7,7 @@
         <?php if ($this->session->userdata('logged_in')['level'] == 'admin'): ?>
           <a class="py-2 d-none d-md-inline-block" href="<?php echo base_url('Sepatu') ?>">Sepatu</a>
         <a class="py-2 d-none d-md-inline-block" href="<?php echo base_url("Users") ?>">Users</a>
+        <a class="py-2 d-none d-md-inline-block" href="<?php echo base_url("Transaksi/laporan") ?>">Transaksi</a>
         <?php endif ?>
         <a class="py-2 d-none d-md-inline-block" href="<?php echo base_url('Login/logout') ?>">Logout</a>
       </div>

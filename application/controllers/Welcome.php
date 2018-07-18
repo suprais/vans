@@ -21,6 +21,6 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['sepatu'] = $this->db->get('sepatu')->result();
-		$this->load->view('home',$data);
+		$this->load->view('home_user',$data);
 	}
 }

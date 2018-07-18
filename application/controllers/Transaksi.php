@@ -11,7 +11,7 @@ class Transaksi extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('cart');
+		redirect('Welcome','refresh');
 	}
 	public function add_cart($id)
 	{

@@ -47,8 +47,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input class="search_box" type="checkbox" id="search_box">
 						<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
 						<div class="search_form">
-							<form action="#" method="post">
-								<input type="text" name="Search" placeholder="Search..." required="">
+							<form action="" method="post">
+								<input type="text" name="search" placeholder="Search..." required="">
 								<input type="submit" value="Send">
 							</form>
 						</div>
@@ -57,10 +57,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
 							<li><a href="index.html" class="hvr-underline-from-center active">Home</a></li>
-							<li><a href="#about" class="hvr-underline-from-center scroll">About Us</a></li>
 							<li><a href="#team" class="hvr-underline-from-center scroll">Product</a></li>
 							<li><a href="#blog" class="hvr-underline-from-center scroll">Cart</a></li>
-							<li><a href="<?php echo base_url('Sepatu') ?>" class="hvr-underline-from-center">Dashboard</a></li>
+
+							<?php if ($this->session->userdata('logged_in') != null): ?>
+								<li><a href="<?php echo base_url('Sepatu') ?>" class="hvr-underline-from-center">Dashboard</a></li>
+								<?php if ($this->session->userdata('logged_in')['level'] == "admin"): ?>
+								<li><a href="<?php echo base_url('Login/logout') ?>" class="hvr-underline-from-center">Logout</a></li>
+							<?php endif ?>
+							<?php else: ?>
+								<li><a href="<?php echo base_url('Login') ?>" class="hvr-underline-from-center">Login</a></li>
+							<?php endif ?>
 						</ul>
 					</div> 
 					<div class="clearfix"> </div>	
@@ -79,91 +86,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- //banner-text --> 
 	</div>
-	<!-- //banner --> 
-	<!-- banner-bottom-grids -->
-	<div id="about" class="banner-bottom-grids">
-		<div class="col-md-7 col-xs-7 banner-bottom-grid-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h2>Discover the art of <span> Sandals</span></h2>
-			<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil 
-				molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
-				ut labore et dolore magnam velit esse quam.</p>
-			<div class="more">
-				<a href="#myModal" data-toggle="modal" >Learn More...</a>
-			</div>
-		</div>
-		<div class="col-md-5 col-xs-5 banner-bottom-grid animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<img src="<?php echo base_url('assets_home/') ?>images/img1.jpg" alt=" " class="img-responsive" />
-			<div class="banner-bottom-grid1">
-				<div class="banner-bottom-grid1-pos animated wow fadeInUpBig" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod </h3>
-				</div>
-			</div>
-		</div>
-		<div class="clearfix"> </div>
-	</div> 
-	<!-- //banner-bottom-grids --> 
-	<!-- progress -->
-	<div class="wthree_progress" id="work">	
-		<div class="col-md-6 col-xs-6 w3_agileits_progress_right">	
-			<h3 class="agileinfo_title">Our <span>WorkProgress</span> </h3>
-			<p>Ut vel condimentum tortor. Donec placerat mi vel ante volutpat ultrices. 
-				Praesent vestibulum, nisi vitae aliquet elementum, dolor libero finibus ex, 
-				et condimentum tellus nunc vel dolor. </p>
-		</div>
-		<div class="col-md-6 col-xs-6 w3_agileits_progress_left">
-			<div class="agileits_progress_left_grid"> 
-				<div class="agileits_progress_left_grid_pos">
-					<div class="col-xs-3 w3ls_progress_left1">
-						<div class="w3ls_progress_left1_grid">
-							<i class="fa fa-facebook" aria-hidden="true"></i>
-							<p>likes</p>
-							<h4 class="counter">43,454</h4>
-						</div>
-					</div>
-					<div class="col-xs-3 w3ls_progress_left1">
-						<div class="w3ls_progress_left1_grid">
-							<i class="fa fa-twitter w3_twitter" aria-hidden="true"></i>
-							<p>Followers</p>
-							<h4 class="counter">23,543</h4>
-						</div>
-					</div>
-					<div class="col-xs-3 w3ls_progress_left1">
-						<div class="w3ls_progress_left1_grid">
-							<i class="fa fa-google-plus w3_google" aria-hidden="true"></i>
-							<p>Circles</p>
-							<h4 class="counter">56,321</h4>
-						</div>
-					</div>
-					<div class="col-xs-3 w3ls_progress_left1">
-						<div class="w3ls_progress_left1_grid">
-							<i class="fa fa-linkedin w3_linkedin" aria-hidden="true"></i>
-							<p>Connections</p>
-							<h4 class="counter">12,345</h4>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div> 
-		<div class="clearfix"> </div>
-	</div>
-	<!-- //progress --> 
-	<!-- Stats -->
-	<script src="<?php echo base_url('assets_home/') ?>js/waypoints.min.js"></script> 
-	<script src="<?php echo base_url('assets_home/') ?>js/counterup.min.js"></script> 
-	<script>
-		jQuery(document).ready(function( $ ) {
-			$('.counter').counterUp({
-				delay: 10,
-				time: 2000
-			});
-		});
-	</script>
+	
 	<!-- //gallery --> 
 	<!-- about-team -->
 	<div id="team" class="team">		
 		<div class="container"> 
-			<h3 class="agileinfo_title">Our <span>Product</span> </h3> 
+			<h3 class="agileinfo_title"><span>Product</span> Found (Search "<?php echo $this->input->post('search') ?>")</h3> 
 			<div class="team-row-agileinfo">
 				<?php foreach ($sepatu as $key => $value): ?>
 				<div class="col-md-3 col-sm-6 col-xs-6 team-grids">
@@ -195,8 +123,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="about-w3slid jarallax">
 		<div class="subscribe-agileinfo"> 
 			<div class="container">  
-				<h3>Lorem ipsum dolor sit amet</h3>
-				<p>Curabitur nec purus eget urna pulvinar placerat. Integer varius est vitae iaculis suscipit. Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus omnis optio </p> 
+				<h3>Selamat Berbelanja</h3>
+				<p>Wear Shoes </p> 
 			</div>
 		</div>
 	</div>
@@ -204,7 +132,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- blog -->
 	<div id="blog" class="blog cd-section"> 
 		<div class="container">  
-			<h3 class="agileinfo_title">Cart <span>Blog</span> </h3> 
+			<h3 class="agileinfo_title">Keranjang <span>Belanja</span> </h3> 
 			<?php echo form_open('Transaksi/update_cart'); ?>
         <table class="table table-striped table-hover table-bordered"> 
           <thead> 

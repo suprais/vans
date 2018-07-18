@@ -7,9 +7,9 @@ class Users extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Users_model');
 		$this->load->helper('form');
-		if ($this->session->userdata('logged_in') == null) {
+		if ($this->session->userdata('logged_in')['level'] != "admin") {
 				redirect('Login/logout');
-			}	
+			}
 	}
 
 	public function index()

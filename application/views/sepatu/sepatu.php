@@ -1,11 +1,7 @@
 <?php $this->load->view('header') ?>
 <?php $this->load->view('navbar') ?>
 <main role="main" class="container">
-	<div class="jumbotron">
-		<h1>Navbar example</h1>
-		<p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-		<a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
-	</div>
+	
 	<h1>Sepatu</h1>
 	<a href="<?php echo base_url('Sepatu/input') ?>" class="btn btn-primary mb-3">input</a>
 

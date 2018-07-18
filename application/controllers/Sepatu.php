@@ -10,7 +10,7 @@ class Sepatu extends CI_Controller {
 		$this->load->model('Sepatu_model');
 		//load helper form
 		$this->load->helper('form');
-		if ($this->session->userdata('logged_in') == null) {
+		if ($this->session->userdata('logged_in')['level'] != "admin") {
 				redirect('Login/logout');
 			}	
 	}

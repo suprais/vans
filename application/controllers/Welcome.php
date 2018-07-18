@@ -20,6 +20,12 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$search = $this->input->post('search');
+		if ($search != null) {
+			$this->db->like('nama',$search);
+			$this->db->or_like('keterangan',$search);
+			$this->db->or_like('ukuran',$search);
+		}
 		$data['sepatu'] = $this->db->get('sepatu')->result();
 		$this->load->view('home_user',$data);
 	}

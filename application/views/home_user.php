@@ -61,10 +61,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href="#blog" class="hvr-underline-from-center scroll">Cart</a></li>
 
 							<?php if ($this->session->userdata('logged_in') != null): ?>
+								<?php if ($this->session->userdata('logged_in')['level'] == "admin"){ ?>
 								<li><a href="<?php echo base_url('Sepatu') ?>" class="hvr-underline-from-center">Dashboard</a></li>
-								<?php if ($this->session->userdata('logged_in')['level'] == "admin"): ?>
+								<?php } ?>
 								<li><a href="<?php echo base_url('Login/logout') ?>" class="hvr-underline-from-center">Logout</a></li>
-							<?php endif ?>
+								
 							<?php else: ?>
 								<li><a href="<?php echo base_url('Login') ?>" class="hvr-underline-from-center">Login</a></li>
 							<?php endif ?>

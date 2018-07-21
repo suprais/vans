@@ -2,7 +2,7 @@
 <?php $this->load->view('navbar') ?>
 <main role="main" class="container">
 	<h1>Laporan Transaksi</h1>
-
+	<a href="<?php echo base_url('Transaksi/cetakPDF') ?>" class="btn btn-primary">Print</a>
 	<!-- File Header -->
 	<table class="table table-striped table-bordered" width="100%" id="example">
 		<thead>

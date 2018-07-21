@@ -8,9 +8,9 @@ class Transaksi extends CI_Controller {
 		parent::__construct();
 		$this->load->library("cart");
 		$this->load->model('Transaksi_model');
-		if ($this->session->userdata('logged_in')['level'] != "admin") {
-				redirect('Login/logout');
-			}
+		if ($this->session->userdata('logged_in') == null) {
+			redirect('Login/logout');
+		}
 	}
 	public function index()
 	{
@@ -25,9 +25,9 @@ class Transaksi extends CI_Controller {
 			'qty'=> 1,
 			'price'=> $sepatu->harga,
 			'image' => $sepatu->image
- 		);
- 		$this->cart->insert($data);
- 		redirect('Transaksi','refresh');
+			);
+		$this->cart->insert($data);
+		redirect('Transaksi','refresh');
 	}
 	public function update_cart()
 	{
@@ -36,7 +36,7 @@ class Transaksi extends CI_Controller {
 			$set = array(
 				'rowid' => $value['rowid'],
 				'qty' => $value['qty']
-			);
+				);
 			$this->cart->update($set);
 		}
 		redirect("Transaksi");
@@ -57,7 +57,7 @@ class Transaksi extends CI_Controller {
 			'tanggal' => date('Y-m-d'),
 			'status_transaksi' => 1,
 			'id_member' => $this->session->userdata('logged_in')['id']
-		);
+			);
 		$this->db->insert('transaksi',$set_transaksi);
 		$id_tran = $this->db->insert_id();
 		$cart = $this->cart->contents();
@@ -66,7 +66,7 @@ class Transaksi extends CI_Controller {
 				'no_transaksi' => $id_tran,
 				'id_sepatu_detail' => $value['id'],
 				'jumlah' => $value['qty']
-			);
+				);
 			$this->db->insert('transaksi_detail',$set);
 		}
 		$this->cart->destroy();
@@ -77,5 +77,14 @@ class Transaksi extends CI_Controller {
 	{
 		$data['transaksi'] = $this->Transaksi_model->select();
 		$this->load->view('laporan_transaksi',$data);
+	}
+	public function cetakPDF()
+	{
+		$this->load->library('pdf');
+
+		$data['transaksi'] = $this->Transaksi_model->select();
+		$this->pdf->load_view('print_laporan',$data);
+		$this->pdf->render();
+		$this->pdf->stream("data-transaksi.pdf");
 	}
 }

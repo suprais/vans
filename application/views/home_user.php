@@ -7,7 +7,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Footwear a Fashion Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+	<link rel="shortcut icon" href="https://cdn.freebiesupply.com/logos/large/2x/vans-3-logo-png-transparent.png">
+	<title>Vans® | Official Site | Free Shipping & Returns</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Footwear Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -56,7 +57,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="index.html" class="hvr-underline-from-center active">Home</a></li>
+							<li><a href="<?php echo base_url('') ?>" class="hvr-underline-from-center">Home</a></li>
 							<li><a href="#team" class="hvr-underline-from-center scroll">Product</a></li>
 							<li><a href="#blog" class="hvr-underline-from-center scroll">Cart</a></li>
 
@@ -80,8 +81,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="banner-text"> 
 			<div class="container"> 
 				<div class="banner-w3lstext"> 
-					<h1><a href="index.html">Footwear<span>Welcome To Trendy</span></a></h1>
-					<p>Nulla ultricies nunc et lorem semper quis accumsan dui aliquam aucibus sagittis placerat quis accumsan</p>
+					<h1><a href="<?php echo base_url('') ?>">Vans Footwear<span>Welcome To Trendy</span></a></h1>
+					<p>The most progressive vulcanized skateboarding shoe ever. It’s the shoe-ture. Battle-ready and equipped with DURACAP™ upper reinforcements, ULTRACUSH™ LITE 3D sockliners, and a longer lasting tread design. All tested and approved by Tony Trujillo.</p>
 
 				</div> 
 			</div>
@@ -188,7 +189,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
 				</div> 
 				<div class="modal-body">
-					<img src="<?php echo base_url('assets_home/') ?>images/img3.jpg" alt=""> 
+					<img src="<?php echo base_url('assets_home/') ?>images/11.jpg" alt=""> 
 					<h5>Cras rutrum iaculis enim</h5>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum iaculis enim, non convallis felis mattis at. Donec fringilla lacus eu pretium rutrum. Cras aliquet congue ullamcorper. Etiam mattis eros eu ullamcorper volutpat. Proin ut dui a urna efficitur varius. uisque molestie cursus mi et congue consectetur adipiscing elit cras rutrum iaculis enim, Lorem ipsum dolor sit amet, non convallis felis mattis at. Maecenas sodales tortor ac ligula ultrices dictum et quis urna. Etiam pulvinar metus neque, eget porttitor massa vulputate. </p>
 				</div> 
@@ -199,10 +200,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="copyw3-agile">
 		<div class="container">  
 			<div class="social-w3lsicon footer-w3icons"> 
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-google-plus"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-dribbble"></i></a>
+				<a href="https://www.facebook.com/vansofficialID/?ref=br_rs&brand_redir=30028422818"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.vans.com/utility/contact-us.html"><i class="fa fa-google-plus"></i></a>
+				<a href="https://twitter.com/vans_66"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.vans.com/"><i class="fa fa-dribbble"></i></a>
 			</div>
 			<p>© 2017 Footwear. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
 		</div>

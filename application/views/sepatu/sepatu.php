@@ -33,8 +33,10 @@
 					<td><img src="<?php echo base_url('uploads/'.$value['image']) ?>" style="width: 100px;"></td>
 					<td>
 						<!-- --AKSI-- -->
+						<div class="btn-group">
 						<a href="<?php echo base_url('Sepatu/update/'.$value['id']) ?>" class="btn btn-sm btn-success">Ubah</a>
 						<a href="<?php echo base_url('Sepatu/hapus/'.$value['id']) ?>" class="btn btn-sm btn-danger">Hapus</a>
+						</div>
 					</td>
 				</tr>
 			<?php endforeach ?>

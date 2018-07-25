@@ -70,7 +70,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('<?php echo base_url('assets_login/') ?>images/bg-01.jpg');"></div>
+				<div class="login100-more" style="background-image: url('<?php echo base_url('assets_login/') ?>images/fe596037ad57f2e402b9bbcae6cd222b.jpg');"></div>
 			</div>
 		</div>
 	</div>
